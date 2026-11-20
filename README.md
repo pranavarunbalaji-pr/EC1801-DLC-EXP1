@@ -42,19 +42,17 @@ module tb;
         .F(F)
     );
 
-    initial begin
+   initial begin
         // ---- VCD dump setup ----
         $dumpfile("fun.vcd");   // name of the VCD file to be generated
         $dumpvars(0, tb);   // dump all signals in this testbench hierarchy
 
-        // ---- Apply all 4 input combinations ----
+   // ---- Apply all 4 input combinations ----
         $monitor("Time=%0t A=%b B=%b | F=%b", $time, A, B, F);
-
         A = 0; B = 0; #10;
         A = 0; B = 1; #10;
         A = 1; B = 0; #10;
         A = 1; B = 1; #10;
-
         #10 $finish;
     end
 
@@ -113,7 +111,8 @@ and successfully implemented using Verilog HDL.
 
 ## OUTPUT
 
-<img width="1600" height="872" alt="WhatsApp Image 2026-11-11 at 10 14 24 AM" src="https://github.com/user-attachments/assets/d9376e26-7022-4e99-8d7c-e98a3f02c0dc" />
+<img width="1920" height="1080" alt="Screenshot (17)" src="https://github.com/user-attachments/assets/c1c4ecb6-d296-441b-b6ab-f053e4f36465" />
+
 
 
 Result
